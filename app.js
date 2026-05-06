@@ -5646,6 +5646,76 @@ const nav_style_colors = {
 }
 
 document.write(
+    `<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+    :root {
+        --glass: rgba(255, 255, 255, 0.75);
+        --glass-border: rgba(255, 255, 255, 0.3);
+        --accent: ${nav_style_colors[UI.accent_color]["background-color"]};
+    }
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+        background-color: #f3f4f6;
+        background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+        background-size: 24px 24px;
+        color: #1a202c;
+    }
+    .mdui-container { max-width: 1000px !important; padding-top: 30px; }
+    .nexmoe-item {
+        background: var(--glass) !important;
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+        border: 1px solid var(--glass-border) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.05) !important;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    .mdui-list-item {
+        border-radius: 12px !important;
+        margin-bottom: 4px !important;
+        transition: all 0.2s ease-in-out !important;
+    }
+    .mdui-list-item:hover {
+        background: rgba(255,255,255,0.9) !important;
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+    .mdui-list-item i { color: var(--accent) !important; opacity: 0.8; }
+    #search_bar { background: rgba(0,0,0,0.04); border-radius: 20px; padding: 0 12px; }
+    #search_bar.mdui-textfield-expanded { background: #fff; box-shadow: 0 0 0 2px var(--accent); }
+    
+    /* Modern Nav Hover */
+    .nav-style > a { transition: all 0.2s; border-radius: 8px; margin: 0 2px; }
+    .nav-style > a:hover { 
+        background-color: ${nav_style_colors[UI.accent_color]["background-color"]}!important; 
+        color: ${nav_style_colors[UI.accent_color]["color"]}!important;
+        opacity: 1;
+    }
+    </style>`
+);
+
+if (UI.dark_mode) {
+    document.write(
+        `<style>
+        :root {
+            --glass: rgba(30, 41, 59, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.08);
+        }
+        body {
+            color: #f3f4f6;
+            background-color: #0f172a;
+            background-image: radial-gradient(#1e293b 1px, transparent 1px);
+        }
+        .nexmoe-item { box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important; }
+        .mdui-list-item:hover { background: rgba(255,255,255,0.05) !important; }
+        .mdui-toolbar>a:last-child { color: #fff; }
+        .mdui-textfield-input { color: #fff !important; }
+        </style>`
+    );
+}
+
+document.write(
     `<style>.nav-style > a:hover {background-color: ${nav_style_colors[UI.accent_color]["background-color"]}!important; color: ${nav_style_colors[UI.accent_color]["color"]}!important}</style>`
 );
 
