@@ -5543,6 +5543,27 @@ document.write(
 document.write(
     '<script src="//cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>'
 );
+
+const nav_style_colors = {
+    "red": { "background-color": "#FF5252", "color": "#FFF" },
+    "pink": { "background-color": "#FF4081", "color": "#FFF" },
+    "purple": { "background-color": "#E040FB", "color": "#FFF" },
+    "deep-purple": { "background-color": "#7C4DFF", "color": "#FFF" },
+    "indigo": { "background-color": "#536DFE", "color": "#FFF" },
+    "blue": { "background-color": "#448AFF", "color": "#FFF" },
+    "light-blue": { "background-color": "#40C4FF", "color": "#FFF" },
+    "cyan": { "background-color": "#18FFFF", "color": "#000" },
+    "teal": { "background-color": "#64FFDA", "color": "#000" },
+    "green": { "background-color": "#69F0AE", "color": "#FFF" },
+    "light-green": { "background-color": "#B2FF59", "color": "#000" },
+    "lime": { "background-color": "#EEFF41", "color": "#000" },
+    "yellow": { "background-color": "#FFFF00", "color": "#000" },
+    "amber": { "background-color": "#FFD740", "color": "#FFF" },
+    "orange": { "background-color": "#FFAB40", "color": "#FFF" },
+    "deep-orange": { "background-color": "#FF6E40", "color": "#FFF" },
+}
+
+
 document.write(
     `<style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
@@ -5626,24 +5647,6 @@ document.write(
     </style>`
 );
 
-const nav_style_colors = {
-    "red": { "background-color": "#FF5252", "color": "#FFF" },
-    "pink": { "background-color": "#FF4081", "color": "#FFF" },
-    "purple": { "background-color": "#E040FB", "color": "#FFF" },
-    "deep-purple": { "background-color": "#7C4DFF", "color": "#FFF" },
-    "indigo": { "background-color": "#536DFE", "color": "#FFF" },
-    "blue": { "background-color": "#448AFF", "color": "#FFF" },
-    "light-blue": { "background-color": "#40C4FF", "color": "#FFF" },
-    "cyan": { "background-color": "#18FFFF", "color": "#000" },
-    "teal": { "background-color": "#64FFDA", "color": "#000" },
-    "green": { "background-color": "#69F0AE", "color": "#FFF" },
-    "light-green": { "background-color": "#B2FF59", "color": "#000" },
-    "lime": { "background-color": "#EEFF41", "color": "#000" },
-    "yellow": { "background-color": "#FFFF00", "color": "#000" },
-    "amber": { "background-color": "#FFD740", "color": "#FFF" },
-    "orange": { "background-color": "#FFAB40", "color": "#FFF" },
-    "deep-orange": { "background-color": "#FF6E40", "color": "#FFF" },
-}
 
 document.write(
     `<style>
