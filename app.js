@@ -5543,6 +5543,26 @@ document.write(
 document.write(
     '<script src="//cdn.jsdelivr.net/npm/marked@4.0.0/marked.min.js"></script>'
 );
+document.write(
+    "<style>.mdui-appbar .mdui-toolbar{height:56px;font-size:1pc}.mdui-toolbar>i{opacity:.5}.mdui-toolbar>i{padding:0}.mdui-toolbar>a:hover,a.active,a.mdui-typo-headline{opacity:1}.mdui-container{max-width:980px}.mdui-list-item{transition:none}.mdui-list>.th{background-color:initial}.mdui-list-item>a{width:100%;line-height:3pc}.mdui-list-item{margin:2px 0;padding:0}.mdui-toolbar>a:last-child{opacity:1; color: #000}@media screen and (max-width:980px){.mdui-list-item .mdui-text-right{display:none}.mdui-container{width:100%!important;margin:0}}</style>"
+);
+if (UI.dark_mode) {
+    document.write(
+        "<style>* {box-sizing: border-box}body{color:rgba(255,255,255,.87);background-color:#1E252F}.mdui-theme-primary-${UI.main_color} .mdui-color-theme{background-color:#1E252F!important} .nexmoe-item{background-color: #ffffff0d!important;box-shadow:0 0.2em 1em rgb(0 0 0 / 30%)!important} .mdui-list-item{border: 1px solid rgb(255 255 255 / 10%)!important}.mdui-toolbar>a:last-child{color: #FFF}.mdui-select-menu{box-shadow: 0 0.2em 1em rgba(100, 100, 100, 0.2)!important} .mdui-text-color-blue-grey-500{color: #e3e4e5 !important} .mdui-textfield-label{color: rgba(255, 255, 255, .54)!important}</style>"
+    );
+}
+
+if (UI.hide_actions_tab) {
+    document.write(
+        "<style>.dummyclass{display: none!important}</style>"
+    );
+}
+
+if (UI.helpURL === '') {
+    document.write(
+        "<style>.dummyclass2{display: none!important}</style>"
+    );
+}
 
 const nav_style_colors = {
     "red": { "background-color": "#FF5252", "color": "#FFF" },
@@ -5561,161 +5581,6 @@ const nav_style_colors = {
     "amber": { "background-color": "#FFD740", "color": "#FFF" },
     "orange": { "background-color": "#FFAB40", "color": "#FFF" },
     "deep-orange": { "background-color": "#FF6E40", "color": "#FFF" },
-}
-
-
-document.write(
-    `<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-    :root {
-        --glass: rgba(255, 255, 255, 0.75);
-        --glass-border: rgba(255, 255, 255, 0.3);
-        --accent: ${nav_style_colors[UI.accent_color]["background-color"]};
-    }
-    body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-        background-color: #f3f4f6;
-        background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-        background-size: 24px 24px;
-    }
-    .mdui-container { max-width: 1000px !important; padding-top: 30px; }
-    .nexmoe-item {
-        background: var(--glass) !important;
-        backdrop-filter: blur(15px) saturate(160%);
-        -webkit-backdrop-filter: blur(15px) saturate(160%);
-        border: 1px solid var(--glass-border) !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.05) !important;
-        padding: 20px !important;
-        margin-bottom: 20px !important;
-    }
-    .mdui-list-item {
-        border-radius: 12px !important;
-        margin-bottom: 4px !important;
-        transition: all 0.2s ease-in-out !important;
-    }
-    .mdui-list-item:hover {
-        background: rgba(255,255,255,0.9) !important;
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .mdui-list-item i { color: var(--accent) !important; opacity: 0.8; }
-    .mdui-toolbar { font-size: 15px; font-weight: 500; }
-    #search_bar { background: rgba(0,0,0,0.04); border-radius: 20px; padding: 0 12px; }
-    #search_bar.mdui-textfield-expanded { background: #fff; box-shadow: 0 0 0 2px var(--accent); }
-    @media screen and (max-width:980px){ .mdui-list-item .mdui-text-right{display:none} .mdui-container{width:100%!important;margin:0} }
-    </style>`
-);
-if (UI.dark_mode) {
-    document.write(
-        `<style>
-        :root {
-            --glass: rgba(30, 41, 59, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.08);
-        }
-        body {
-            color: #f3f4f6;
-            background-color: #0f172a;
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-        }
-        .nexmoe-item { box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important; }
-        .mdui-list-item:hover { background: rgba(255,255,255,0.05) !important; }
-        .mdui-toolbar>a:last-child { color: #fff; }
-        .mdui-textfield-input { color: #fff !important; }
-        .mdui-textfield-label { color: rgba(255,255,255,0.5) !important; }
-        </style>`
-    );
-}
-
-if (UI.hide_actions_tab) {
-    document.write("<style>.dummyclass{display: none!important}</style>");
-}
-
-if (UI.helpURL === '') {
-    document.write("<style>.dummyclass2{display: none!important}</style>");
-}
-
-// Modernized Hover Colors for the Nav
-document.write(
-    `<style>
-    .nav-style > a { transition: all 0.2s; border-radius: 8px; margin: 0 2px; }
-    .nav-style > a:hover { 
-        background-color: ${nav_style_colors[UI.accent_color]["background-color"]}!important; 
-        color: ${nav_style_colors[UI.accent_color]["color"]}!important;
-        opacity: 1;
-    }
-    </style>`
-);
-
-
-document.write(
-    `<style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-    :root {
-        --glass: rgba(255, 255, 255, 0.75);
-        --glass-border: rgba(255, 255, 255, 0.3);
-        --accent: ${nav_style_colors[UI.accent_color]["background-color"]};
-    }
-    body {
-        font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
-        background-color: #f3f4f6;
-        background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-        background-size: 24px 24px;
-        color: #1a202c;
-    }
-    .mdui-container { max-width: 1000px !important; padding-top: 30px; }
-    .nexmoe-item {
-        background: var(--glass) !important;
-        backdrop-filter: blur(15px) saturate(160%);
-        -webkit-backdrop-filter: blur(15px) saturate(160%);
-        border: 1px solid var(--glass-border) !important;
-        border-radius: 16px !important;
-        box-shadow: 0 8px 32px rgba(0,0,0,0.05) !important;
-        padding: 20px !important;
-        margin-bottom: 20px !important;
-    }
-    .mdui-list-item {
-        border-radius: 12px !important;
-        margin-bottom: 4px !important;
-        transition: all 0.2s ease-in-out !important;
-    }
-    .mdui-list-item:hover {
-        background: rgba(255,255,255,0.9) !important;
-        transform: translateX(5px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
-    .mdui-list-item i { color: var(--accent) !important; opacity: 0.8; }
-    #search_bar { background: rgba(0,0,0,0.04); border-radius: 20px; padding: 0 12px; }
-    #search_bar.mdui-textfield-expanded { background: #fff; box-shadow: 0 0 0 2px var(--accent); }
-    
-    /* Modern Nav Hover */
-    .nav-style > a { transition: all 0.2s; border-radius: 8px; margin: 0 2px; }
-    .nav-style > a:hover { 
-        background-color: ${nav_style_colors[UI.accent_color]["background-color"]}!important; 
-        color: ${nav_style_colors[UI.accent_color]["color"]}!important;
-        opacity: 1;
-    }
-    </style>`
-);
-
-if (UI.dark_mode) {
-    document.write(
-        `<style>
-        :root {
-            --glass: rgba(30, 41, 59, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.08);
-        }
-        body {
-            color: #f3f4f6;
-            background-color: #0f172a;
-            background-image: radial-gradient(#1e293b 1px, transparent 1px);
-        }
-        .nexmoe-item { box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important; }
-        .mdui-list-item:hover { background: rgba(255,255,255,0.05) !important; }
-        .mdui-toolbar>a:last-child { color: #fff; }
-        .mdui-textfield-input { color: #fff !important; }
-        </style>`
-    );
 }
 
 document.write(
